@@ -4,7 +4,7 @@ import Filter from './components/Filter';
 import CharacterList from './components/CharacterList';
 import CharacterDetail from './components/CharacterDetail';
 import { Switch, Route } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 
 
 class App extends Component {
@@ -40,7 +40,7 @@ class App extends Component {
       query: userQuery
     })
   }
-
+ 
   getFilter() {
     const filterResults = this.state.results.filter(item => {
       return (item.name.toUpperCase().includes(this.state.query.toUpperCase()) ? true : false)
@@ -48,12 +48,10 @@ class App extends Component {
     return filterResults;
   }
 
-
   render() {
     return (
       <div className="app">
         <Switch>
-
           <Route exact path="/" render={()=>
             <Fragment>
               <header className="app__header">
@@ -70,7 +68,6 @@ class App extends Component {
           <Route path="/characters/:id" render={props => 
             <CharacterDetail match={props.match} characters={this.state.results} />
           }/>
-
         </Switch>
       </div>
     );

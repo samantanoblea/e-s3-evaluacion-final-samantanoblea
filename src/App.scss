@@ -1,0 +1,96 @@
+.app{
+    padding:  3em;   
+}
+
+//Header
+.app__header{
+    padding: 20px;
+    text-align: center;     
+}
+.header__title{
+    margin-top: 0px;
+}
+
+.header__filter{
+    outline: none;
+    text-align: center;  font-weight: bold; 
+}
+
+//Main
+ .app__main{
+    
+}
+
+//>List
+.wizard__list{
+    margin:0;
+    padding: 0;
+
+    display:grid;
+    grid-template-columns: 300px 300px 300px;
+    //grid-template-rows: 400px ;
+    grid-gap:10px;
+  
+}
+
+//>>Item
+.wizard__item{
+    margin:0;
+    background: rgb(128, 2, 19)  ;
+    text-align: center;
+    list-style: none;
+    text-decoration-line: none;
+    border:3px solid black;
+    //width: 200px;
+}
+
+.wizard__item-name{
+    color: black;
+}
+
+.wizard__item-image{
+    width: 160px;
+    height: 230px;
+    margin: 20px;
+}
+
+.wizard__item-house{
+    color: black;
+    text-decoration-line: none;
+}
+
+
+//Details
+.wizard__details-container{
+    background:rgb(128, 2, 19)  ;
+    text-align: center;
+}
+
+.wizard__details-name{
+    margin:0;
+    padding: 50px;
+}
+
+.wizard__details-image{
+    width: 300px;
+    height: 400px;
+}
+
+.wizard__details-alive{
+    margin-bottom:30px; 
+}
+
+.link__return{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;  
+}
+
+@media all and(max-width:450px){
+    .wizard__details-image{
+        width: 150px;
+        height: 250px;
+    }
+      
+}

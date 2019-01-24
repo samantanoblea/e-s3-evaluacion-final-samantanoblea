@@ -6,10 +6,10 @@ class CharacterCard extends Component {
     render() {
         const {name, image, house} = this.props;
         return (
-            <div className="">
-                <h2 className="wizard__name">{name}</h2>
-                <img className="wizard__image" src={image} alt={name}></img>
-                <p className="wizard__house">{house}</p>
+            <div className="wizard__item-container">
+                <img className="wizard__item-image" src={image} alt={name}></img>
+                <h2 className="wizard__item-name" style={{textDecoration:'none'}}>{name}</h2>
+                <p className="wizard__item-house">{house}</p>
             </div>
         )
     }
