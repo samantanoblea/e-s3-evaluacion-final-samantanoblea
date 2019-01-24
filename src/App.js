@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import { fetchWizards } from './service/WizardsService';
+import Filter from './components/Filter';
+import CharacterList from './components/CharacterList';
+
 
 class App extends Component {
   constructor(props) {
@@ -9,13 +12,9 @@ class App extends Component {
       query:'',
       results: []
     }
-    this.getWizards()
 
   this.getWizards = this.getWizards.bind(this);
   this.getQuery = this.getQuery.bind(this);
-  
-
-
   }
 
   getWizards(){
@@ -27,7 +26,7 @@ class App extends Component {
           results: newData
         })
       })
-  };
+  }
 
   getQuery(event){
     const userQuery = event.currentTarget.value;
@@ -38,38 +37,31 @@ class App extends Component {
 
   getFilter(){
     const filterResults = this.state.results.filter(item =>{
-    
-    return (item.name.includes(this.state.query)?true :false)
+      return (item.name.toUpperCase().includes(this.state.query.toUpperCase())?true :false)
     });
     return filterResults;
   }
 
 
   render() {
-    const filterResults = this.getFilter();
     return (
       <div className="app">
+
         <header className="app__header">
           <h1 className="header__title">Harry Potter Characters</h1>
-          <input className="header__filter" onKeyUp={this.getQuery}></input>
+          <Filter action={this.getQuery}/>
         </header>
+
         <main className="app__main">
-          <ul className="wizards__list">
-            {filterResults.map(item =>{
-              return(
-                <li className="wizard__item" key={item.id}>
-                  <div className="">
-                    <h2 className="wizard__name">{item.name}</h2>
-                    <img className="wizard__image" src={item.image} alt={item.name}></img>
-                    <p className="wizard__house">{item.house}</p>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
+          <CharacterList characters={this.getFilter()}/>
         </main>
+
       </div>
     );
+  }
+
+  componentDidMount(){
+    this.getWizards()
   }
 }
 
