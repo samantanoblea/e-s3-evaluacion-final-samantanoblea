@@ -56,7 +56,7 @@ class App extends Component {
           <Route exact path="/" render={() =>
             <Fragment>
               <header className="app__header">
-                  <h1 className="header__title">Harry P<img src={glasses} alt=""></img>tter Characters</h1> 
+                  <h1 className="header__title">Harry P<img src={glasses} alt="o"></img>tter Characters</h1> 
                 <Filter action={this.getQuery} />
               </header>
 
