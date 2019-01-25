@@ -22,7 +22,7 @@ class App extends Component {
   componentDidMount() {
     this.getWizards()
   }
-  
+
   getWizards() {
     fetchWizards()
       .then(data => {
@@ -40,7 +40,7 @@ class App extends Component {
       query: userQuery
     })
   }
- 
+
   getFilter() {
     const filterResults = this.state.results.filter(item => {
       return (item.name.toUpperCase().includes(this.state.query.toUpperCase()) ? true : false)
@@ -52,7 +52,7 @@ class App extends Component {
     return (
       <div className="app">
         <Switch>
-          <Route exact path="/" render={()=>
+          <Route exact path="/" render={() =>
             <Fragment>
               <header className="app__header">
                 <h1 className="header__title">Harry Potter Characters</h1>
@@ -63,11 +63,11 @@ class App extends Component {
                 <CharacterList characters={this.getFilter()} />
               </main>
             </Fragment>
-          }/>
+          } />
 
-          <Route path="/characters/:id" render={props => 
+          <Route path="/characters/:id" render={props =>
             <CharacterDetail match={props.match} characters={this.state.results} />
-          }/>
+          } />
         </Switch>
       </div>
     );

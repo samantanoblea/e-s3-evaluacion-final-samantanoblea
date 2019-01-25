@@ -13,24 +13,18 @@
 
 .header__filter{
     outline: none;
-    text-align: center;  font-weight: bold; 
-}
-
-//Main
- .app__main{
-    
+    text-align: center;  
+    font-weight: bold; 
 }
 
 //>List
-.wizard__list{
+.wizards__list{
     margin:0;
     padding: 0;
-
     display:grid;
-    grid-template-columns: 300px 300px 300px;
-    //grid-template-rows: 400px ;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-gap:10px;
-  
 }
 
 //>>Item
@@ -41,7 +35,7 @@
     list-style: none;
     text-decoration-line: none;
     border:3px solid black;
-    //width: 200px;
+   
 }
 
 .wizard__item-name{
@@ -87,10 +81,29 @@
     text-transform: uppercase;  
 }
 
-@media all and(max-width:450px){
-    .wizard__details-image{
-        width: 150px;
-        height: 250px;
+
+//Responsive
+@media all and(max-width:930px){
+    .wizards__list{
+        grid-template-columns: repeat(3, 1fr);
     }
-      
+}
+
+@media all and(max-width:800px){
+    .wizards__list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and(max-width:500px){
+    .wizards__list{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media all and(max-width:500px){
+    .wizard__details-image{
+        width: 200px;
+        height: 300px;
+    }
 }

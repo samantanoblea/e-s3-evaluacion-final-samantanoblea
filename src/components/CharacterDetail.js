@@ -1,18 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class CharacterDetail extends Component {
- 
-    render(){ 
-        const {characters} = this.props;
+
+    render() {
+        const { characters } = this.props;
         const characterId = this.props.match.params.id;
 
-        if (characters.length > 0 && characterId < characters.length)  {
+        if (characters.length > 0 && characterId < characters.length) {
             const character = characters[characterId];
-
-            const {name, image, house, yearOfBirth, patronus, alive} = character;
+            const { name, image, house, yearOfBirth, patronus, alive } = character;
 
             return (
                 <div className="wizard__details-container">
@@ -22,26 +21,26 @@ class CharacterDetail extends Component {
                     <p className="wizard__details-birth">{`Nacimiento: ${yearOfBirth}`}</p>
                     <p className="wizard__details-patronus">{`Patronus: ${patronus}`}</p>
                     <p className="wizard__details-alive">{`Estado: ${alive ? 'vivo' : 'muerto 💀'}`}</p>
-                    
+
                     <Link to="/" className="link__return">Volver</Link>
                 </div>
             );
-        }else{
+        } else {
             return (
                 <Fragment>
-                   <p>Aún no tenemos datos</p> 
-                   <Link to="/" className="link__return">Volver</Link>
+                    <p>Aún no tenemos datos</p>
+                    <Link to="/" className="link__return">Volver</Link>
                 </Fragment>
             );
         }
     }
 }
 
-CharacterDetail.propTypes = {   
+CharacterDetail.propTypes = {
     name: PropTypes.string,
     image: PropTypes.string,
     house: PropTypes.string,
-    birth: PropTypes.number,  
+    birth: PropTypes.number,
     patronus: PropTypes.string
 }
 
