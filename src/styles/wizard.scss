@@ -1,0 +1,23 @@
+.wizard__item{
+    margin:0;
+    background: rgb(128, 2, 19)  ;
+    text-align: center;
+    list-style: none;
+    text-decoration-line: none;
+    border:3px solid black;
+}
+
+.wizard__item-name{
+    color: white;
+}
+
+.wizard__item-image{
+    width: 160px;
+    height: 230px;
+    margin: 20px;
+}
+
+.wizard__item-house{
+    color: white;
+    text-decoration-line: none;
+}

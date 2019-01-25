@@ -5,6 +5,7 @@ import CharacterList from './components/CharacterList';
 import CharacterDetail from './components/CharacterDetail';
 import { Switch, Route } from 'react-router-dom';
 import './App.scss';
+import glasses from './images/gafitas.jpg';
 
 
 class App extends Component {
@@ -55,7 +56,7 @@ class App extends Component {
           <Route exact path="/" render={() =>
             <Fragment>
               <header className="app__header">
-                <h1 className="header__title">Harry Potter Characters</h1>
+                  <h1 className="header__title">Harry P<img src={glasses} alt=""></img>tter Characters</h1> 
                 <Filter action={this.getQuery} />
               </header>
 

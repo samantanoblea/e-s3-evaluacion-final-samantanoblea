@@ -1,0 +1,33 @@
+.wizard__details-container{
+    background:rgb(128, 2, 19)  ;
+    text-align: center;
+    padding: 0;
+}
+
+.wizard__details-currentHouse{
+    padding-top: 10px;
+    border-radius: 50%;
+}
+
+.wizard__details-name{
+    margin:0;
+    padding: 10px;
+}
+
+.wizard__details-image{
+    width: 250px;
+    height: 350px;
+}
+
+.wizard__details-alive{
+    margin-bottom:30px; 
+}
+
+.link__return{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    text-transform: uppercase;  
+    background-color: black;
+    padding: 10px;
+}
