@@ -18,6 +18,7 @@ class App extends Component {
 
     this.getWizards = this.getWizards.bind(this);
     this.getQuery = this.getQuery.bind(this);
+    this.getFilter = this.getFilter.bind(this);
   }
 
   componentDidMount() {
@@ -57,11 +58,11 @@ class App extends Component {
             <Fragment>
               <header className="app__header">
                   <h1 className="header__title">Harry P<img src={glasses} alt="o"></img>tter Characters</h1> 
-                <Filter action={this.getQuery} />
+                <Filter action={this.getQuery}/>
               </header>
 
               <main className="app__main">
-                <CharacterList characters={this.getFilter()} />
+                <CharacterList characters={this.getFilter()}/>
               </main>
             </Fragment>
           } />
